@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Setup the website directory with the current website
+mkdir -p build
+cd build
+git clone https://github.com/ndw/TestIxmlPublish.git
+mv TestIxmlPublish website
+cd website
+git checkout gh-pages
+rm -rf .git
+cd ../../
+
+mkdir -p build/website/editors
+cp working-draft.html build/website/editors
+cp ancillary.txt build/website/editors
+
+cp -R src/website/resources/ build/website/
